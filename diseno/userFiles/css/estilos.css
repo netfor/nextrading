@@ -1,0 +1,94 @@
+
+body{font-family: 'Open Sans', sans-serif;}
+.overlay{position: absolute; opacity: .7; width: 100%; height: 100%;top: 0;left: 0;}
+.bg_principal{
+    background-size: cover;
+    position: relative; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+.centrar{
+    margin: 0 auto!important;
+    float: none!important;
+    display: block !important;
+}
+/** Estilos del header **/
+#header, header, .opmenu_responsive{
+    position:fixed;
+    height: 55px;
+    display:block;
+    width: 100%;
+    z-index:9;
+    text-align:center;
+    color: #f2f2f2;
+    padding: 0px 0 0 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 5px 0 0 0;
+}
+.opmenu_responsive{
+    text-align: left;
+    height: 41px;
+    font-size: 32px;
+    display: none;
+}
+.opmenu_responsive .overlay{background-color: #A6CE39;}
+#header, header{top:0px;left: 0;}
+#header .overlay, header .overlay{ background-color: #A6CE39;}
+header nav ul{list-style: none;}
+header nav ul li{display: block; float: left;  min-width: 170px;}
+header nav ul li.logo_header{width: 250px;}
+header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0;}
+#main_menu_responsive{ 
+    background-color: #BFDA6F;
+    color: #fff;
+    text-align: center;
+}
+.logo_opmenu{display: block; float: right; margin: -30px 0 0 0; position: relative;}
+.btn_opmenu{margin: 0 0 0 10px}
+
+
+/** Estilos del home **/
+//#inicio{background-image: url(../img/home/bg_home.jpg);}
+
+.img_bottom{
+    position: absolute;
+    width: 500px;     right: 0;     bottom: 0;
+}
+.img_bottom img{
+    width: 100%;
+}
+.botton_smart{
+    background-color: #F28021;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 23px;
+    font-weight: 100;
+    border-radius: 5px;
+    margin-bottom: 31px !important;
+}
+.txt_home{
+    color: #fff; 
+    text-align: center;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/** Estilos del video **/
+.video {
+    padding-top: 56%;
+    position: relative;
+}
+
+#video iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}

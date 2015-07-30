@@ -41,6 +41,7 @@ header nav ul{list-style: none;}
 header nav ul li{display: block; float: left;  min-width: 170px;}
 header nav ul li.logo_header{width: 250px;}
 header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0;}
+header nav ul li a{text-decoration: none; color: #fff}
 #main_menu_responsive{ 
     background-color: #BFDA6F;
     color: #fff;
@@ -53,13 +54,6 @@ header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0
 /** Estilos del home **/
 //#inicio{background-image: url(../img/home/bg_home.jpg);}
 
-.img_bottom{
-    position: absolute;
-    width: 500px;     right: 0;     bottom: 0;
-}
-.img_bottom img{
-    width: 100%;
-}
 .botton_smart{
     background-color: #F28021;
     text-align: center;
@@ -78,17 +72,37 @@ header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0
     line-height: 30px;
     font-family: 'Open Sans', sans-serif;
 }
-
-
-/** Estilos del video **/
-.video {
-    padding-top: 56%;
-    position: relative;
+.footer{color: #fff;}
+.footer .item-footer{
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 30px;
 }
-
-#video iframe {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
+.footer .item-footer .title{
+    font-size: 29px;
+}
+.footer .item-footer ul{
+    padding: 0;
+}
+.footer .item-footer ul li{
+    display: block;
+    float: left;
+    min-width: 165px;
+    max-width: 195px;
+    padding: 2px 0;
+}
+.footer .item-footer ul li a{color: #fff; text-decoration: none}
+.footer .item-footer ul.productos li:nth-child(odd){
+    border-right: 1px solid #fff;
+    margin-right: 9px;
+}
+.footer .separator{height: 1px; background-color: #fff; margin: 20px 0}
+.footer .footUltimo{
+    text-align: center;
+    font-weight: 300;
+    margin: 0 0 50px 0;
+    font-size: 20px;
+}
+.bx-wrapper{
+    margin-top: 60px!important;
 }

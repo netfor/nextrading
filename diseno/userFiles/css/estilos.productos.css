@@ -4,10 +4,11 @@ body{font-family: 'Open Sans', sans-serif;}
 .bg_principal{
     background-size: cover;
     position: relative; 
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 58px;
 
+    background-color: #C1DD74;
 }
 .centrar{
     margin: 0 auto!important;
@@ -78,7 +79,13 @@ header nav ul li a{text-decoration: none; color: #fff}
     font-weight: 300;
     margin-bottom: 30px;
 }
-.footer .item-footer .title{
+.item-footer .title a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer .item-footer .title,
+.footer .item-footer .title a
+{
     font-size: 29px;
 }
 .footer .item-footer ul{
@@ -105,4 +112,9 @@ header nav ul li a{text-decoration: none; color: #fff}
 }
 .bx-wrapper{
     margin-top: 60px!important;
+}
+/***** Menu *****/
+.mainMenu li.active{
+    background-color: #F09748;
+    height: 39px;     margin: -22px 0px 0 0;     padding: 22px 0 0 0;
 }

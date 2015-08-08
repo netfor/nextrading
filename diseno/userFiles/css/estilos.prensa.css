@@ -91,7 +91,9 @@ header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0
     max-width: 195px;
     padding: 2px 0;
 }
-.footer .item-footer ul li a{color: #fff; text-decoration: none}
+.footer .item-footer ul li a,
+.footer .item-footer .title a
+{color: #fff; text-decoration: none}
 .footer .item-footer ul.productos li:nth-child(odd){
     border-right: 1px solid #fff;
     margin-right: 9px;
@@ -100,11 +102,11 @@ header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0
 .footer .footUltimo{
     text-align: center;
     font-weight: 300;
-    margin: 0 0 50px 0;
+    margin: 0px 0 15px 0;
     font-size: 20px;
 }
 #seccion1  .bx-wrapper{
-    margin-top: 0px!important;
+    margin-top: 60px!important;
     margin-bottom: 0px!important;
 }
 .fp-tableCell{
@@ -188,7 +190,7 @@ ul.sliderOnPrensa li{
     float: left;
     list-style: none;
     position: relative;
-    width: 195px!important;
+    /* width: 195px!important; */
     margin-right: 0px;
     margin-top: -16px;
     cursor: pointer;
@@ -215,7 +217,7 @@ ul.sliderOnPrensa li{
 #seccion3 .contenedor
 {
     /* padding: 65px 0 0 0; */
-    margin-top: 80px;
+    margin-top: 94px;
 }
 .nxtAcerca {
     margin-top: 10px;
@@ -302,6 +304,7 @@ ul.sliderOnPrensa li{
 #prensaCarrusel ul li .txtInVer a{
     text-decoration: none;
 }
+#prensaNoticia .contentNoticia a{ text-decoration: none; color: #fff}
 #prensaNoticia .contentNoticia{
     background-color: #F09748;
     border-radius: 10px;
@@ -316,17 +319,18 @@ ul.sliderOnPrensa li{
 #seccion3 .albert{
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -103px;
+    /* width: 60%; */
 }
 #prensaNoticia .notTitle{
     margin-bottom: 25px;
     font-weight: 400;
 }
 .secFinal{
-    background-color: #F6B77F;
+    background-color: #FFF;
 }
 .secFinal .contenedor{
-    padding-top: 95px;
+    padding-top: 35px;
 }
 .secFinal .franjaDistribuidores{
     width: 100%;
@@ -376,4 +380,86 @@ ul.sliderOnPrensa li{
 }
 .secFinal .btn_franjaDistribuidor .btnDistribuidor.btn2{
     background-color: #F48022;
+}
+.formularios.contenedor{
+    padding: 30px 0;
+}
+.formularios h3{
+    font-size: 36px;
+    font-weight: 300;
+    color: #AECA36;
+}
+.formularios input,
+.formularios select,
+.formularios textarea
+{
+    margin: 5px 0;
+    padding: 5px 0;
+    border: 1px solid #B7B7B7;
+    border-radius: 5px;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    color: #7D7D7D;
+    font-weight: lighter;
+    text-indent: 13px;
+}
+.formularios select{
+    background-image: url(../img/contacto/img_select.png);
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    background-size: 17px auto;
+    padding-right: 37px;
+    font-weight: 300;
+}
+.formularios textarea{
+    resize: none;
+    min-height: 100px;
+    max-height: 150px;
+}
+.formularios input[type="submit"]{
+    background-color: #A6CE39;
+    color: #fff;
+    border-radius: 7px;
+    padding: 7px 0;
+    -o-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+.formularios .adverT{
+    font-size: 12px;
+    font-weight: 300;
+    color: #B4B3B4;
+}
+.formularios .nxtSk{
+    margin: 65px 0 0 30px;
+}
+.formularios .nxtSk .txt_nktSk{
+    background-color:  #F2F2F2;
+    padding: 40px 0 50px 0;
+
+    margin: 24px 0 0 0;
+}
+.formularios .nxtSk .txt_nktSk .nxtSkTextos{
+    margin: 0 20px 0 20px;
+}
+.formularios .nxtSk .txt_nktSk .nxtSkTextos .itemTxt{
+    margin: 15px 0;
+    color: #94AD45;
+    font-size: 17px;
+    font-weight: 300;
+}
+.formularios .nxtSk .txt_nktSk .nxtSkTextos .itemTxt strong{font-weight: 600}
+.formularios .nxtSk .txt_nktSk .nxtSkTextos .itemTxt span{ text-decoration: underline;}
+.franjaDistribuidores .contenedor{
+    padding: 90px 0 0 0;
+}
+
+
+/***** Menu *****/
+.mainMenu li.active{
+    background-color: #F09748;
+    height: 39px;     margin: -22px 0px 0 0;     padding: 22px 0 0 0;
 }

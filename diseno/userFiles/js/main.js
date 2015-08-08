@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 //Fullpager
+    dataSeccion();
     $('#fullpage').fullpage({
         anchors: ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "sec7"],
         animateAnchor: true,
@@ -44,6 +45,32 @@ $(document).ready(function () {
         maxSlides: 15,
         slideMargin: 20
     });
+
+    setInterval(function () {
+        //$.fn.fullpage.moveSlideRight();
+    }, 4000);
+
+    $(".mainMenu li a").on('click', function () {
+        $(".mainMenu li").removeClass('active');
+        $(this).parent('li').addClass('active');
+    });
+//funcion para detectar las almohadillas de la url
+    function dataSeccion() {
+        //Remover los datos de clase
+        $(".mainMenu li").removeClass('active');
+        //obtener data 
+        var tab = window.location.hash.substring(1);
+        console.log(typeof tab);
+        if (tab != "") {
+            $(".mainMenu li a[href='#" + tab + "']").parent('li').addClass('active');
+        } else {
+            $(".mainMenu li a[href='#sec1']").parent('li').addClass('active');
+        }
+
+    }
+
+
+
     /** Animaciones usando Tween max **/
     function animarHome() {
         (new TimelineLite())
@@ -56,7 +83,4 @@ $(document).ready(function () {
                 ]);
     }
 
-    setInterval(function () {
-        //$.fn.fullpage.moveSlideRight();
-    }, 4000);
 });

@@ -1,0 +1,414 @@
+/*
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+.contenedor                                 { position: relative; width: 1000px; margin: 0px auto; padding: 0; /* height: 100%; */}
+.column, .columns                           { float: left; display: inline; margin-left: 5px; margin-right: 5px; }
+.row                                        { margin-bottom: 20px; }
+
+/* Nested Column Classes */
+.column.alpha, .columns.alpha               { margin-left: 0; }
+.column.omega, .columns.omega               { margin-right: 0; }
+.column.full, .columns.full                 { margin-right: 0; margin-left: 0; }
+
+/* Base Grid */
+.contenedor .one.column                      { width: 40px;  }
+.contenedor .two.columns                     { width: 100px; }
+.contenedor .three.columns                   { width: 160px; }
+.contenedor .four.columns                    { width: 240px; }
+.contenedor .five.columns                    { width: 280px; }
+.contenedor .six.columns                     { width: 340px; }
+.contenedor .sixcontact.columns              { width: 310px; }
+.contenedor .seven.columns                   { width: 400px; }
+.contenedor .eight.columns                   { width: 460px; }
+.contenedor .nine.columns                    { width: 520px; }
+.contenedor .ten.columns                     { width: 580px; }
+.contenedor .eleven.columns                  { width: 640px; }
+.contenedor .twelve.columns                  { width: 700px; }
+.contenedor .thirteen.columns                { width: 760px; }
+.contenedor .fourteen.columns                { width: 820px; }
+.contenedor .fifteen.columns                 { width: 880px; }
+.contenedor .sixteen.columns                 { width: 940px; }
+.contenedor .one-third.column                { width: 300px; }
+.contenedor .two-thirds.column               { width: 620px; }
+
+/* Offsets */
+.contenedor .offset-by-one                   { padding-left: 60px;  }
+.contenedor .offset-by-two                   { padding-left: 120px; }
+.contenedor .offset-by-three                 { padding-left: 180px; }
+.contenedor .offset-by-four                  { padding-left: 240px; }
+.contenedor .offset-by-five                  { padding-left: 300px; }
+.contenedor .offset-by-six                   { padding-left: 360px; }
+.contenedor .offset-by-seven                 { padding-left: 420px; }
+.contenedor .offset-by-eight                 { padding-left: 480px; }
+.contenedor .offset-by-nine                  { padding-left: 540px; }
+.contenedor .offset-by-ten                   { padding-left: 600px; }
+.contenedor .offset-by-eleven                { padding-left: 660px; }
+.contenedor .offset-by-twelve                { padding-left: 720px; }
+.contenedor .offset-by-thirteen              { padding-left: 780px; }
+.contenedor .offset-by-fourteen              { padding-left: 840px; }
+.contenedor .offset-by-fifteen               { padding-left: 900px; }
+.slicknav_menu                               { display: none;}
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    body{ padding: 0px 0px 20px 0px; }
+    /* estilos para el header */
+
+    .slicknav_menu{ display: none }
+    .logo-responsive{display: none;}
+    /* grilla */
+    .contenedor                                  { width: 768px !important; }
+    .contenedor .column,
+    .contenedor .columns                         { margin-left: 10px; margin-right: 10px;  }
+    .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
+    .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
+
+    .contenedor .one.column                      { width: 28px; }
+    .contenedor .two.columns                     { width: 76px; }
+    .contenedor .three.columns                   { width: 124px; }
+    .contenedor .four.columns                    { width: 172px; }
+    .contenedor .five.columns                    { width: 220px; }
+    .contenedor .six.columns                     { width: 268px; }
+    .contenedor .sixcontact.columns              { width: 235px; }
+    .contenedor .seven.columns                   { width: 316px; }
+    .contenedor .eight.columns                   { width: 364px; }
+    .contenedor .nine.columns                    { width: 412px; }
+    .contenedor .ten.columns                     { width: 460px; }
+    .contenedor .eleven.columns                  { width: 508px; }
+    .contenedor .twelve.columns                  { width: 556px; }
+    .contenedor .thirteen.columns                { width: 604px; }
+    .contenedor .fourteen.columns                { width: 652px; }
+    .contenedor .fifteen.columns                 { width: 700px; }
+    .contenedor .sixteen.columns                 { width: 748px; }
+
+    .contenedor .one-third.column                { width: 236px; }
+    .contenedor .two-thirds.column               { width: 492px; }
+
+    /* Offsets */
+    .contenedor .offset-by-one                   { padding-left: 48px; }
+    .contenedor .offset-by-two                   { padding-left: 96px; }
+    .contenedor .offset-by-three                 { padding-left: 144px; }
+    .contenedor .offset-by-four                  { padding-left: 192px; }
+    .contenedor .offset-by-five                  { padding-left: 240px; }
+    .contenedor .offset-by-six                   { padding-left: 288px; }
+    .contenedor .offset-by-seven                 { padding-left: 336px; }
+    .contenedor .offset-by-eight                 { padding-left: 348px; }
+    .contenedor .offset-by-nine                  { padding-left: 432px; }
+    .contenedor .offset-by-ten                   { padding-left: 480px; }
+    .contenedor .offset-by-eleven                { padding-left: 528px; }
+    .contenedor .offset-by-twelve                { padding-left: 576px; }
+    .contenedor .offset-by-thirteen              { padding-left: 624px; }
+    .contenedor .offset-by-fourteen              { padding-left: 672px; }
+    .contenedor .offset-by-fifteen               { padding-left: 720px; }
+
+    /* Estillos propios del tema*/
+    header nav ul li{display: block; float: left; font-size: 13px;/* max-width: 50px; */ min-width: 110px;}
+    header nav ul li.logo_header{max-width: 220px;margin: 0 10px 0 0;}
+    .img_bottom{ position: absolute;width: 450px;     right: 0;     bottom: 0;}
+    #seccion2 .albert{
+        bottom: -15px;
+        right: -21px;
+        width: 211px;
+    }
+    .logo .lg2 {
+        font-size: 1.3em;
+        text-align: left
+    }
+    .nxtAcerca .txt_nxtAcerca.txt2{
+        margin-top: 49px;
+    }
+    .nxtAcerca .txt_nxtAcerca.txt1{
+        margin-top: 75px;
+    }
+}
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+    body{ padding: 40px 0px 0px 0px; }
+    /* estilos para el header */
+    header      { display: none }
+    header img.logo     { margin: 15px 30px 0px 20px }
+
+
+    .slicknav_menu{ display: block }
+    .logo-responsive{display: block}
+
+    /* contacto */
+    .info_correo{ margin: 60px 0px 0px 0px; height: 50px; }
+    .info_correo img{ float: none !important; display: block; margin: 0px auto !important; }
+    .info_direccion, .info_telefonos{ width: 100%; float: left; margin: 0px !important; }
+    .info_direccion img, .info_telefonos img{ width: 90%; max-width: 90%; float: none !important; display: block; margin: 5px auto 30px !important; }    
+
+    /* intranet */
+    .link_intranet{ width: 50%; margin: 0px auto !important; float: none; height: 200px; }
+    .link_intranet img{ width: 90%; max-width: 90%; display: block; margin: 0px auto; }
+
+
+
+    .contenedor                                  { width: 300px !important; }
+    .galleria                                   { margin: 0px 0px 10px 0px }
+
+    .columns, .column                           { margin: 0 10px; }
+    .contenedor .one.column,
+    .contenedor .two.columns,
+    .contenedor .three.columns,
+    .contenedor .four.columns,
+    .contenedor .five.columns,
+    .contenedor .six.columns,
+    .contenedor .sixcontact.columns,
+    .contenedor .seven.columns,
+    .contenedor .eight.columns,
+    .contenedor .nine.columns,
+    .contenedor .ten.columns,
+    .contenedor .eleven.columns,
+    .contenedor .twelve.columns,
+    .contenedor .thirteen.columns,
+    .contenedor .fourteen.columns,
+    .contenedor .fifteen.columns,
+    .contenedor .sixteen.columns,
+    .contenedor .one-third.column,
+    .contenedor .two-thirds.column  { width: 280px; }
+
+    /* Offsets */
+    .contenedor .offset-by-one,
+    .contenedor .offset-by-two,
+    .contenedor .offset-by-three,
+    .contenedor .offset-by-four,
+    .contenedor .offset-by-five,
+    .contenedor .offset-by-six,
+    .contenedor .offset-by-seven,
+    .contenedor .offset-by-eight,
+    .contenedor .offset-by-nine,
+    .contenedor .offset-by-ten,
+    .contenedor .offset-by-eleven,
+    .contenedor .offset-by-twelve,
+    .contenedor .offset-by-thirteen,
+    .contenedor .offset-by-fourteen,
+    .contenedor .offset-by-fifteen { padding-left: 0; }
+
+    /* Float menu left now*/
+
+    .menu ul {float:left;}
+
+
+    table, thead, tbody, th, td, tr             { display: block; }
+    thead tr                                    { position: absolute; top: -9999px; left: -9999px; }
+    tr                                          { border: 1px solid #ccc; }
+    td                                          { border: 1px solid #ccc; position: relative; padding-left: 0%; }
+
+    td:before                                   { position: absolute; top: 6px; left: 6px; width: 45%; padding-right: 10px;}    
+
+    /*** Estilos del tema ***/
+    .img_bottom{display: none;}
+    .opmenu_responsive{display: block;}
+    .fp-controlArrow.fp-next{ 
+        bottom: 6px;
+        top: initial;
+        border-width: 20.5px 0 20.5px 30px;
+    }
+    .fp-controlArrow.fp-prev{  
+        bottom: 6px;
+        top: initial;
+        border-width: 20.5px 30px 20.5px 0;
+    }
+    .franjas{
+        display: none;
+    }
+    #seccion2 .albert,
+    #seccion3 .albert{
+        display: none;
+    }
+    .nxtAcerca .btn_ntxAcerca{
+        margin-bottom: 60px;
+    }
+    .nxtAcerca .txt_nxtAcerca.txt2{
+        margin-top: 19px;
+        text-align: center;
+    }
+    .nxtAcerca .txt_nxtAcerca.txt1{
+        margin-top: 15px;
+        text-align: center;
+
+    }
+    .logo .lg2{
+        margin: 80px 0 0 0;
+    }
+    .contenedor img {
+        width: 90%;
+    }
+}
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    body{ padding: 40px 0px 20px 0px; }
+    /* estilos para el header */
+    header      { display: none }
+
+    /* contenidos */
+    .contenidos{} 
+
+    .slicknav_menu{ display: block }
+    .logo-responsive{display: block}
+
+
+    .contenedor                                  { width: 420px !important; }
+
+    .galleria                                   { margin: 0px 60px 10px 60px }
+
+
+    .contenedor .one.column,
+    .contenedor .two.columns,
+    .contenedor .three.columns,
+    .contenedor .four.columns,
+    .contenedor .five.columns,
+    .contenedor .six.columns,
+    .contenedor .sixcontact.columns,
+    .contenedor .seven.columns,
+    .contenedor .eight.columns,
+    .contenedor .nine.columns,
+    .contenedor .ten.columns,
+    .contenedor .eleven.columns,
+    .contenedor .twelve.columns,
+    .contenedor .thirteen.columns,
+    .contenedor .fourteen.columns,
+    .contenedor .fifteen.columns,
+    .contenedor .sixteen.columns,
+    .contenedor .one-third.column,
+    .contenedor .two-thirds.column { width: 400px; }
+
+    /* Float menu left now*/
+
+    .menu ul {float:left;}
+
+    table, thead, tbody, th, td, tr             { display: block; }
+    thead tr                                    { position: absolute; top: -9999px; left: -9999px; }
+    tr                                          { border: 1px solid #ccc; }
+    td                                          { border: 1px solid #ccc; position: relative; padding-left: 0%; }
+
+    td:before                                   { position: absolute; top: 6px; left: 6px; width: 45%; padding-right: 10px;}
+
+    /*Estilos porpios del tema*/
+}
+
+@media only screen and (max-width: 480px) {
+    .contenedor_slider, .slider_info{
+        height: 145px;
+    }
+    .contenedor_slider ul li{
+        height: 120px
+    }
+    .slider_info {
+        height: 115px;
+    }
+    .slider_info ul li{
+        height: 90px;
+    }
+    .slider_info {
+        margin-bottom: 10px!important;
+    }
+    .slider_info .bx-wrapper .bx-controls-direction a {
+        height: 75px !important;
+        margin-top: -80px !important;
+    }
+    .contenedor_link{margin: 0px 0px 0px 0px;}
+    .contenedor_slider .bx-wrapper .bx-controls-direction a {
+        margin-top: -75px !important;
+    }
+    .slider_info .bx-controls {
+        margin: -6px 0px 0px 0px !important;
+    }
+    .fixed .content {
+        top: 39%;
+        left: 43%;
+    }
+    .tab_producto .lista_producto{
+        list-style: none!important;
+        padding:0;
+        margin: 10px auto;
+        width: 90%!important;
+    }
+    .contenedor_info .item-link img {
+        width: 200px;
+    }
+    .contenedor_abajo{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .contenedor_tip .item-tip .title, .tab_producto a.title {
+        font-size: 8pt;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+/* #Clearing
+================================================== */
+
+/* Self Clearing Goodness */
+.contenedor:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+.row:after,
+.clearfix:after {
+    clear: both; }
+.row,
+.clearfix {
+    zoom: 1; }
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+img.scale-with-grid {
+    max-width: 100%;
+    height: auto;
+}

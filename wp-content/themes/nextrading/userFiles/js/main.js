@@ -4,9 +4,9 @@
 
 $(document).ready(function () {
 //Fullpager
-    dataSeccion();
+    /*
     $('#fullpage').fullpage({
-        anchors: ["sec1", "sec2", "sec3", "sec4", "sec5", "sec6", "sec7"],
+       
         animateAnchor: true,
         scrollOverflow: true,
         css3: false,
@@ -16,8 +16,12 @@ $(document).ready(function () {
         },
         onSlideLeave: function () {
             animarHome();
-        }
+        },
+        fitToSection: false
     });
+    */
+    
+    
     //Aqui va el menu
     $("#main_menu_responsive").mmenu({
         "navbar": {
@@ -25,7 +29,12 @@ $(document).ready(function () {
         }
     });
     //Slider 
-    $(".sliderOn").bxSlider();
+    $(".sliderOn1").bxSlider();
+    $(".sliderOn2").bxSlider();
+    $(".sliderOn3").bxSlider();
+    $(".sliderOn4").bxSlider();
+    $(".sliderOn5").bxSlider();
+    $(".sliderOn6").bxSlider();
 
     $(".sliderOnPrensa").bxSlider({
         //pager: false
@@ -36,24 +45,23 @@ $(document).ready(function () {
         maxSlides: 10,
         slideWidth: 170,
         slideMargin: 10,
-        pager: false,
+        pager: false
     });
     //Carrousel
     $('.carrouselVerInPrensa').bxSlider({
         mode: 'vertical',
-        minSlides: 6,
-        maxSlides: 15,
-        slideMargin: 20
+        minSlides: 3,
+        pager: false,
+        auto: true,
+        autoStart: true,
+        moveSlides: 1,
+        infiniteLoop: false
     });
 
-    setInterval(function () {
-        //$.fn.fullpage.moveSlideRight();
-    }, 4000);
 
-    $(".mainMenu li a").on('click', function () {
-        $(".mainMenu li").removeClass('active');
-        $(this).parent('li').addClass('active');
-    });
+
+
+
 //funcion para detectar las almohadillas de la url
     function dataSeccion() {
         //Remover los datos de clase
@@ -83,4 +91,62 @@ $(document).ready(function () {
                 ]);
     }
 
+
+    $('.carrouselVerInPrensa p.ver_mas').click(function () {
+        //obtengo el id
+        var valorId = $(this).attr('id');
+        //borro la información que tiene el div de noticias
+        $('#prensaNoticia .contentNoticia').empty();
+        //muestro el cargador
+        $('#cambiando').fadeIn(1000);
+        //inicio la consulta de ajax
+        //creo la data carrusel
+        var dataArticulo = {
+            id: valorId
+        };
+        //obtengo la información desde la funcion
+        $.ajax({
+            type: "POST", //Tipo de peticion
+            //url del controlador donde procesar·
+            url: "http://" + document.domain + "/wp-content/themes/nextrading/funciones/funcion_prensa.php",
+            //datos que le voy a enviar
+            data: dataArticulo,
+            success: function (data) {
+
+                if (data != '') {
+                    setTimeout(function () {
+                        //oculto el div de cargando
+                        $('#cambiando').fadeOut(500);
+                        setTimeout(function(){
+                            $('#prensaNoticia .contentNoticia').html(data);
+                        }, 500)
+                    }, 500);
+                }
+
+            }
+
+        });
+    });
+    
+    
+    
+    //scroling animado
+    $('a[href*=#]').click(function () {
+        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
+                && location.hostname === this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target
+                    || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top - 120;
+                $('html,body')
+                        .animate({scrollTop: targetOffset}, 1000);
+                return false;
+            }
+        }
+    });
+    
 });
+
+
+

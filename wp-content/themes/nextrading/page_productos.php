@@ -4,134 +4,231 @@
  */
 ?>
 <?php get_header(); ?>
-<!-- Primera seccion -->
-<div id="seccion1" class="section">
 
-    <!-- Contenido de slider de texto -->
-    <div class="slide bg_principal textSlider" style="background-image: url(userFiles/img/slides/bg_home.jpg)">
-        <div class="contenedor">
-            <div class="columns eight">
-                <div class="columns four botton_smart centrar">
-                    Smart Robot Albert
-                </div>
-                <div class="clear"></div>
-                <div class="columns six txt_home centrar">
-                    Smart robot Albert es el primer robot educativo del mundo a usar un Smartphone como cerebro. Educa niños entre los 3 y 12 años de edad usando la diversión.
-                </div>
-            </div>
-        </div>
+<?php if (of_get_option('w2f_productos_slider1') != ''): ?>
+    <!-- Primera seccion -->
+
+    <div class="seccion_interna_producto inicio">
+        <?php
+        //defino arrglo de la consulta
+        $dataConsultaSlider1 = array(
+            'cat' => of_get_option('w2f_productos_slider1'),
+            'posts_per_page' => 10,
+            'orderby' => 'ID',
+            'order' => 'asc'
+        );
+        $querySlider1 = new WP_Query($dataConsultaSlider1);
+        ?>
+        <ul class="sliderOn1">
+            <?php
+            if ($querySlider1->have_posts()) :
+                $i = 0;
+                while ($querySlider1->have_posts()) : $querySlider1->the_post();
+
+                    $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
+                    ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li>
+
+                    <?php
+                    $i ++;
+                endwhile;
+                ?>
+                <?php
+            endif;
+            ?>
+        </ul>
     </div>
-    <!-- Fin Contenido de slider de texto -->
+    <!-- Fin Primera seccion -->
+<?php endif; ?>
 
-    <!-- Contenido de slider de texto -->
-    <div class="slide bg_principal textSlider" style="background-image: url(userFiles/img/slides/bg_home_2.jpg)">
-        <div class="contenedor">
-            <div class="columns eight">
-                <div class="columns four botton_smart centrar">
-                    Smart Robot Albert
-                </div>
-                <div class="clear"></div>
-                <div class="columns six txt_home centrar">
-                    Smart robot Albert es el primer robot educativo del mundo a usar un Smartphone como cerebro. Educa niños entre los 3 y 12 años de edad usando la diversión.
-                </div>
-            </div>
-        </div>
+<?php if (of_get_option('w2f_productos_slider2') != ''): ?>
+    <!-- Primera seccion -->
+    <div class="seccion_interna_producto">
+        <?php
+        //defino arrglo de la consulta
+        $dataConsultaSlider2 = array(
+            'cat' => of_get_option('w2f_productos_slider2'),
+            'posts_per_page' => 10,
+            'orderby' => 'ID',
+            'order' => 'asc'
+        );
+        $querySlider2 = new WP_Query($dataConsultaSlider2);
+        ?>
+        
+        <ul class="sliderOn2">
+            <?php
+            if ($querySlider2->have_posts()) :
+                $i = 0;
+                while ($querySlider2->have_posts()) : $querySlider2->the_post();
+
+                    $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
+                    ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li>
+
+                    <?php
+                    $i ++;
+                endwhile;
+                ?>
+                <?php
+            endif;
+            ?>
+        </ul>
     </div>
-    <!-- Fin Contenido de slider de texto -->ç
+    <!-- Fin Primera seccion -->
+<?php endif; ?>
 
-</div>
-<!-- Fin Primera seccion -->
+<?php if (of_get_option('w2f_productos_slider3') != ''): ?>
+    <!-- Primera seccion -->
+    <div class="seccion_interna_producto">
+        <?php
+        //defino arrglo de la consulta
+        $dataConsultaSlider3 = array(
+            'cat' => of_get_option('w2f_productos_slider3'),
+            'posts_per_page' => 10,
+            'orderby' => 'ID',
+            'order' => 'asc'
+        );
+        $querySlider3 = new WP_Query($dataConsultaSlider3);
+        ?>
+        <ul class="sliderOn3">
+            <?php
+            if ($querySlider3->have_posts()) :
+                $i = 0;
+                while ($querySlider3->have_posts()) : $querySlider3->the_post();
 
-<!-- Segunda seccion -->
-<div id="seccion2" class="section">
-    <!-- Simple slider -->
-    <div class="slide bg_principal" style="background-image: url(userFiles/img/slides/bg_slider_2.jpg)">
+                    $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
+                    ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li>
+
+                    <?php
+                    $i ++;
+                endwhile;
+                ?>
+                <?php
+            endif;
+            ?>
+        </ul>
     </div>
-    <!-- Fin Simple slider -->
-</div>
-<!-- Fin Segunda seccion -->
+    <!-- Fin Primera seccion -->
+<?php endif; ?>
 
-<!-- Tercera seccion -->
-<div id="seccion3" class="section">
-    <!-- Simple slider -->
-    <div class="slide bg_principal only-image" style="background-image: url(userFiles/img/slides/bg_funcionamiento.jpg)">
-    </div>
-    <!-- Simple slider -->
-</div>
-<!-- Fin Tercera seccion -->
+<?php if (of_get_option('w2f_productos_slider4') != ''): ?>
+    <!-- Primera seccion -->
+    <div class="seccion_interna_producto">
+        <?php
+        //defino arrglo de la consulta
+        $dataConsultaSlider4 = array(
+            'cat' => of_get_option('w2f_productos_slider4'),
+            'posts_per_page' => 10,
+            'orderby' => 'ID',
+            'order' => 'asc'
+        );
+        $querySlider4 = new WP_Query($dataConsultaSlider4);
+        ?>
+        <ul class="sliderOn4">
+            <?php
+            if ($querySlider4->have_posts()) :
+                $i = 0;
+                while ($querySlider4->have_posts()) : $querySlider4->the_post();
 
-<!-- Cuarta seccion -->
-<div id="seccion4" class="section">
-    <!-- Simple slider -->
-    <div class="slide bg_principal only-image" style="background-image: url(userFiles/img/slides/bg_slider_4.jpg)">
-    </div>
-    <!-- Simple slider -->
-</div>
-<!-- Fin Cuarta seccion -->
+                    $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
+                    ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li>
 
-<!-- Quinta seccion -->
-<div id="seccion5" class="section">
-    <!-- Simple slider -->
-    <div class="slide bg_principal only-image" style="background-image: url(userFiles/img/slides/bg_slider_5.jpg)">
+                    <?php
+                    $i ++;
+                endwhile;
+                ?>
+                <?php
+            endif;
+            ?>
+        </ul>
     </div>
-    <!-- Simple slider -->
-</div>
-<!-- Fin Quinta seccion -->
+    <!-- Fin Primera seccion -->
+<?php endif; ?>
 
-<!-- Sexta seccion -->
-<div id="seccion6" class="section" style="background-color: #F6B77F">
-    <!-- Simple slider -->
-    <!--div class="slide bg_principal only-image" style="background-image: url(userFiles/img/slides/bg_slider_6.jpg)"-->
-    <ul class="sliderOn">
-        <li>
-            <img src="userFiles/img/slides/bg_slider_6.jpg" alt=""/>
-        </li>
-        <li>
-            <img src="userFiles/img/slides/bg_slider_6.jpg" alt=""/>
-        </li>
-    </ul>
-    <div class="contenedor footer" style="background-color: #F6B77F">
-        <div class="columns six item-footer">
-            <span class="title">Productos</span>
-            <ul class="productos">
-                <li><a href="#sec1">UO Smart Beam Laser</a></li>
-                <li><a href="#sec1">UO Speaker</a></li>
-                <li><a href="#sec1">UO linkage</a></li>
-                <li><a href="#sec1">UO Nuriatti</a></li>
-                <li><a href="#sec1">UO ALBERT</a></li>
-                <li><a href="#sec1">UO Band</a></li>
-                <li><a href="#sec1">UO Air cube</a></li>
-                <li><a href="#sec1">UO Petfit</a></li>
-                <li><a href="#sec1">UO Smart Beam</a></li>
-                <li><a href="#sec1">UO SolarSkin</a></li>
-            </ul>
-        </div>
-        <div class="columns three item-footer">
-            <span class="title">Nextrading</span>
-            <ul>
-                <li><a href="index.html#sec2">Sobre Nextrading.</a></li>
-                <li><a href="index.html#sec2">SK Telecom.</a></li>
-            </ul>
-        </div>
-        <div class="columns four item-footer">
-            <span class="title">¿Dónde comprar?</span>
-            <ul>
-                <li><a href="index.html#sec4">Sé un distribuidor.</a></li>
-                <li><a href="index.html#sec4">Material de apoyo.</a></li>
-            </ul>
-        </div>
-        <div class="columns three  item-footer">
-            <span class="title"><a href="index.html#sec4">Contacto</a></span>
-        </div>
-        <div class="clear"></div>
-        <div class="separator"></div>
-        <div class="columns sixteen footUltimo">
-            C.I. Nextrading Ltda. - Calle 103 # 14a - 53 Of. 503 - Rincón del Chicó - Bogotá Colombia
-            Teléfono (57 1) 742 72222 - help@nextrading.bi
-        </div>
+<?php if (of_get_option('w2f_productos_slider5') != ''): ?>
+    <!-- Primera seccion -->
+    <div class="seccion_interna_producto">
+        <?php
+        //defino arrglo de la consulta
+        $dataConsultaSlider5 = array(
+            'cat' => of_get_option('w2f_productos_slider5'),
+            'posts_per_page' => 10,
+            'orderby' => 'ID',
+            'order' => 'asc'
+        );
+        $querySlider5 = new WP_Query($dataConsultaSlider5);
+        ?>
+        <ul class="sliderOn5">
+            <?php
+            if ($querySlider5->have_posts()) :
+                $i = 0;
+                while ($querySlider5->have_posts()) : $querySlider5->the_post();
+
+                    $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
+                    ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li>
+
+                    <?php
+                    $i ++;
+                endwhile;
+                ?>
+                <?php
+            endif;
+            ?>
+        </ul>
     </div>
-</div>
-<!-- Fin Sexta seccion -->
+    <!-- Fin Primera seccion -->
+<?php endif; ?>
+    
+<?php if (of_get_option('w2f_productos_slider6') != ''): ?>
+    <!-- Primera seccion -->
+    <div class="seccion_interna_producto fin">
+        <?php
+        //defino arrglo de la consulta
+        $dataConsultaSlider6 = array(
+            'cat' => of_get_option('w2f_productos_slider6'),
+            'posts_per_page' => 10,
+            'orderby' => 'ID',
+            'order' => 'asc'
+        );
+        $querySlider6 = new WP_Query($dataConsultaSlider6);
+        ?>
+        <ul class="sliderOn6">
+            <?php
+            if ($querySlider6->have_posts()) :
+                $i = 0;
+                while ($querySlider6->have_posts()) : $querySlider6->the_post();
+
+                    $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
+                    ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li>
+
+                    <?php
+                    $i ++;
+                endwhile;
+                ?>
+                <?php
+            endif;
+            ?>
+        </ul>
+    </div>
+    <!-- Fin Primera seccion -->
+<?php endif; ?>
+
 
 <?php
 get_footer();

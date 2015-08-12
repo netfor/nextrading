@@ -1,269 +1,278 @@
 <?php get_header(); ?>
+<!-- Primera seccion -->
+<div id="inicio" class="section">
 
 
-                <!-- Primera seccion -->
-                <div id="seccion1" class="section">
+    <?php if (of_get_option('w2f_banner_principal') != ''): ?>
+        <ul class="sliderOnPrensa">
+            <?php
+            //defino arrglo de la consulta
+            $dataConsultaBanner = array(
+                'cat' => of_get_option('w2f_banner_principal'),
+                'posts_per_page' => 6,
+                'orderby' => 'rand'
+            );
+            $queryBanner = new WP_Query($dataConsultaBanner);
+            ?>
+            <?php
+            if ($queryBanner->have_posts()) :
+                while ($queryBanner->have_posts()) : $queryBanner->the_post();
+                    ?>
+                    <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner'); ?>
+                    <li style="background-image: url('<?php echo $image_attr[0] ?>')" class="bg_principal">
+                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
+                    </li> 
+                    <?php
+                endwhile;
+            endif;
+            ?>
+        </ul>      
+    <?php endif; ?>
 
-                    <ul class="sliderOnPrensa">
-                        <li style="background-image: url(userFiles/img/slides/bg_home_2.jpg)" class="bg_principal">
-                            <img src="userFiles/img/slides/bg_home_2.jpg" alt=""/>
+
+    <?php if (of_get_option('w2f_productos_slider') != ''): ?>
+        <div id="carrouselInPrensa">
+            <ul class="carrouselOnPrensa">
+
+                <?php
+                //defino arrglo de la consulta
+                $dataConsultaSlider = array(
+                    'cat' => of_get_option('w2f_productos_slider'),
+                    'posts_per_page' => 20,
+                    'orderby' => 'rand'
+                );
+                $querySlider = new WP_Query($dataConsultaSlider);
+                ?>
+                <?php
+                if ($querySlider->have_posts()) :
+                    while ($querySlider->have_posts()) : $querySlider->the_post();
+                        ?>
+                        <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_slider'); ?>
+
+                        <li class="opacar">
+                            <a href="<?php the_permalink() ?>">
+                                <div class="overlay fade"></div>
+                                <div class="txtCarrousel fadetext"><?php the_title() ?></div>
+                                <img src="<?php echo $image_attr[0] ?>" alt="<?php the_title() ?>" title="<?php the_title() ?>"/>
+                            </a>
                         </li>
-                        <li style="background-image: url(userFiles/img/slides/bg_home.jpg)" class="bg_principal">
-                            <img src="userFiles/img/slides/bg_home_2.jpg" alt=""/>
-                        </li>
-                    </ul>
-                    
-                    
-                    <div id="carrouselInPrensa">
-                        <ul class="carrouselOnPrensa">
-                            <li class="opacar">
-                                <a href="index_productos.html">
-                                    <div class="overlay fade"></div>
-                                    <div class="txtCarrousel fadetext">UO SolarSkin</div>
-                                    <img src="userFiles/img/carrousel/bg_1.jpg" alt=""/>
-                                </a>
-                            </li>
-                            <li class="opacar">
-                                <a href="index_productos.html">
-                                    <div class="overlay fade"></div>
-                                    <div class="txtCarrousel fadetext">UO Smart Beam Laser</div>
-                                    <img src="userFiles/img/carrousel/bg_2.jpg" alt=""/>
-                                </a>
-                            </li>
-                            <li class="opacar">
-                                <a href="index_productos.html">
-                                    <div class="overlay fade"></div>
-                                    <div class="txtCarrousel fadetext">UO Linkage</div>
-                                    <img src="userFiles/img/carrousel/bg_3.jpg" alt=""/>
-                                </a>
-                            </li>
-                            <li class="opacar">
-                                <a href="index_productos.html">
-                                    <div class="overlay fade"></div>
-                                    <div class="txtCarrousel fadetext">UO Smart Beam2</div>
-                                    <img src="userFiles/img/carrousel/bg_5.jpg" alt=""/>
-                                </a>
-                            </li>
-                            <li class="opacar">
-                                <a href="index_productos.html">
-                                    <div class="overlay fade"></div>
-                                    <div class="txtCarrousel fadetext">UO Petfit</div>
-                                    <img src="userFiles/img/carrousel/bg_6.jpg" alt=""/>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Fin Primera seccion -->
+                        <?php
+                    endwhile;
+                endif;
+                ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+</div>
+<!-- Fin Primera seccion -->
+<?php if (of_get_option('w2f_empresas_articulos') != ''): ?>
+    <!-- Segunda seccion -->
 
-                <!-- Segunda seccion -->
-                <div id="seccion2" class="section section_explication">
-                    <div class="franjas">
-                        <div class="item-franja left franja1">
-                            <img src="userFiles/img/prensa/bg_franja_1.png" alt=""/>
-                        </div>
-                        <div class="item-franja right franja2">
-                            <img src="userFiles/img/prensa/bg_franja_2.png" alt=""/>
-                        </div>
-                    </div>
+    <div id="nextrading" class="section section_explication">
 
-                    <div class="contenedor nxtAcerca">
-                        <div class="columns eight logo">
-                            <div class="columns seven lg1">
-                                <img src="userFiles/img/prensa/nxt-logo.png" alt=""/>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="columns seven txt_nxtAcerca txt1">
-                                Somos una empresa importadora y comercializadora de diversos productos, trabajando
-                                con diferentes canales o partners a largo del continente Latinoamericano.
-                                <br />
-                                Tenemos 10 años de experiencia representando de manera exclusiva diversas marcas coreanas como:
-                                <div class="clear"></div>
-                                <div class="columns four right marcasLogo">
-                                    <img src="userFiles/img/prensa/img_marca.png" alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="columns eight logo">
-                            <div class="columns six lg2">
-                                <img src="userFiles/img/prensa/skt-logo.png" alt=""/>
-                                <div>SK Telecom</div>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="columns six txt_nxtAcerca txt2">
-                                SK Telecom es la mayor empresa de telecomunicaciones de Corea del Sur, ubicada en le puesto 64 eb el ranking de
-                                Fortune Global 500. La división Lifeware tiene como enfoque el desarrollo de nuevos productos usando tecnologías de última
-                                generación con portabilidad.
-                                <div class="clear"></div>
-                                <div class="btn_ntxAcerca columns three" >
-                                    <a href="http://www.sklifeware.com" target="_blank">www.sklifeware.com</a>
-                                </div>
+        <div class="contenedor nxtAcerca">
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="albert">
-                        <img src="userFiles/img/prensa/img_albert.png" alt=""/>
-                    </div>
-                </div>
-                <!-- Fin Segunda seccion -->
+            <?php
+            //defino arrglo de la consulta
+            $dataConsultaSlider = array(
+                'cat' => of_get_option('w2f_empresas_articulos'),
+                'posts_per_page' => 2,
+                'orderby' => 'ID',
+                'order' => 'asc'
+            );
+            $querySlider = new WP_Query($dataConsultaSlider);
+            ?>
+            <?php
+            $i = 1;
+            if ($querySlider->have_posts()) :
+                while ($querySlider->have_posts()) : $querySlider->the_post();
+                    ?>
+                    <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), true); ?>
 
-                <!-- Tercera seccion -->
-                <div id="seccion3" class="section">
-                    <div class="contenedor prensaContent">
-                        <div class="columns seven" id="prensaCarrusel">
-                            <ul class="carrouselVerInPrensa">
-                                <li>
-                                    <div class="txtInVer">
-                                        Albert en la sección Carrusel de canal EL TIEMPO.
-                                        <br />
-                                        <a href="https://www.youtube.com/watch?v=OOJseau41Hw" target="_blank">{Ver más}</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="columns ten" id="prensaNoticia">
-                            <div class="contentNoticia">
-                                <div class="columns five">
-                                    <img src="userFiles/img/slides/bg_home_2.jpg" alt=""/>
-                                </div>
-                                <div class="columns four notTitle">
-                                    Albert en la sección Carrusel de canal EL TIEMPO.
-                                </div>
-                                Albert en la sección Carrusel de canal EL TIEMPO.
-                                <br />
-                                <a href="https://www.youtube.com/watch?v=OOJseau41Hw" target="_blank">{Ver más}</a>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="albert">
-                        <img src="userFiles/img/prensa/bg_albert.png" alt=""/>
-                    </div>
-                </div>
-                <!-- Fin Tercera seccion -->
-
-                <!-- Cuarta seccion -->
-                <div id="seccion4" class="section secFinal">
-                    <div class="franjaDistribuidores">
-                        <div class="contenedor">
-                            <div class="title"><span>¿Cómo comprar?</span></div>
-                            <div class="clear"></div>
-                            <div class="columns nine txt1">
-                                Trabajamos directamente con Distribuidores o Retailers a nivel Latinoamérica. Entra en contacto con el Product Manager de tu región y te indicarán lo que debes hacer.
-                            </div>
-                            <div class="column four btn_franjaDistribuidor">
-                                <div class="columns four btnDistribuidor btn1">
-                                    <a href="#">Distribuidores</a>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="columns four btnDistribuidor btn2">
-                                    <a href="#"> Quiero ser distribuidor</a>
-                                </div>
-                            </div>
+                    <div class="columns eight logo">
+                        <div class="columns seven lg<?php echo $i ?>">
+                            <img src="<?php echo $image_attr[0] ?>" alt="<?php the_title() ?>" title="<?php the_title() ?>"/>
                         </div>
                         <div class="clear"></div>
+                        <div class="columns seven txt_nxtAcerca txt<?php echo $i ?>">
+                            <?php the_content() ?>
+                        </div>
                     </div>
-                    <!-- Simple slider -->
-                    <div class="contenedor formularios">
-                        <div class="columns eight">
-                            <h3>Contáctenos</h3>
-                            <form>
-                                <input type="text" class="columns eight" placeholder="Nombre*" required=""/>
-                                <input type="email" class="columns eight" placeholder="Email*" required=""/>
-                                <input type="text" class="columns eight" placeholder="Número de contacto*" required=""/>
-                                <select class="columns eight" required="">
-                                    <option value="">Seleccione un país*</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="Ecuador">Ecuador</option>
-                                    <option value="Venezuela">Venezuela</option>
-                                </select>
-                                <input type="text" class="columns eight" placeholder="Empresa*" required=""/>
-                                <input type="text" class="columns eight" placeholder="Asunto*" required=""/>
-                                <textarea class="columns eight" placeholder="Mensaje*" required=""></textarea>
-                                <div class="clear"></div>
-                                <div class="columns eight adverT">*Campos Obligatorios</div>
-                                <input type="submit" class="columns three" value="Enviar">
-                            </form>
-                        </div>
-                        <div  class="columns eight">
-                            <div class="nxtSk">
-                                <div class="column three">
-                                    <img src="userFiles/img/contacto/logo_nxtsk.png" alt=""/>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="columns eight txt_nktSk">
-                                    <ul class="nxtSkTextos">
-                                        <li class="itemTxt">
-                                            Giovany Park – <strong>CEO Nextrading</strong>
-                                            <br />
-                                            <span>gio@nextrading.biz</span>
-                                        </li>
-                                        <li class="itemTxt">
-                                            Daniel Sarralde – <strong>Product Manager Latam</strong>
-                                            <br />
-                                            <span>pmanager2@nextrading.biz</span>
-                                        </li>
-                                        <li class="itemTxt">
-                                            Nicole Choi – <strong> Product Analyst </strong>
-                                            <br />
-                                            <span>albert-robot@nextrading.bi</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                    <?php
+                    $i ++;
+                endwhile;
+            endif;
+            ?>
 
-                            </div>
-                        </div>
 
+        </div>
+
+
+    </div>
+    <!-- Fin Segunda seccion -->
+<?php endif; ?>
+<?php if (of_get_option('w2f_prensa_articulos') != ''): ?>
+    <!-- Tercera seccion -->
+    <div id="seccion_prensa" class="section">
+        <div class="contenedor prensaContent">
+
+            <div class="columns seven" id="prensaCarrusel">
+                <h2>Prensa</h2>
+                <ul class="carrouselVerInPrensa">
+
+                    <?php
+                    //defino arrglo de la consulta
+                    $dataConsultaListaArticulos = array(
+                        'cat' => of_get_option('w2f_prensa_articulos'),
+                        'posts_per_page' => 20,
+                        'orderby' => 'ID',
+                        'order' => 'asc'
+                    );
+                    $queryLista = new WP_Query($dataConsultaListaArticulos);
+                    ?>
+                    <?php
+                    if ($queryLista->have_posts()) :
+                        while ($queryLista->have_posts()) : $queryLista->the_post();
+                            ?>
+                            <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), true); ?>
+                            <li>
+                                <div class="txtInVer">
+                                    <?php the_title() ?>
+                                    <br />
+                                    <p id="<?php the_ID() ?>" class="ver_mas">{Ver más}</p>
+                                </div>
+                            </li>
+                            <?php
+                            $i ++;
+                        endwhile;
+                    endif;
+                    ?>
+
+
+
+
+
+                </ul>
+            </div>
+
+
+            <div class="columns ten" id="prensaNoticia">
+                <div class="contentNoticia transition">
+
+
+                    <?php
+                    //defino arrglo de la consulta
+                    $dataConsultaListaArticulos = array(
+                        'cat' => of_get_option('w2f_prensa_articulos'),
+                        'posts_per_page' => 1,
+                        'orderby' => 'ID',
+                        'order' => 'asc'
+                    );
+                    $queryLista = new WP_Query($dataConsultaListaArticulos);
+                    ?>
+                    <?php
+                    if ($queryLista->have_posts()) :
+                        while ($queryLista->have_posts()) : $queryLista->the_post();
+                            $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_prensa');
+                            ?>
+
+                            <img src="<?php echo $image_attr[0] ?>" alt="<?php echo get_the_title() ?>" title="<?php echo get_the_title() ?>" />
+                            <h3><?php the_title() ?></h3>
+                            <?php the_content() ?>
+
+                            <?php
+                            $i ++;
+                        endwhile;
+                    endif;
+                    ?>
+
+
+                    <div class="clear"></div>
+
+
+
+
+                </div>
+                <div id="cambiando">
+                    <i class="fa fa-refresh fa-spin"></i> cargando
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    <!-- Cuarta seccion -->
+    <div id="seccionFooter" name="donde-comprar" class="section secFinal">
+        <div class="franjaDistribuidores">
+            <div class="contenedor">
+                <div class="title"><span>¿Cómo comprar?</span></div>
+                <div class="clear"></div>
+                <div class="columns nine txt1">
+                    Trabajamos directamente con Distribuidores o Retailers a nivel Latinoamérica. Entra en contacto con el Product Manager de tu región y te indicarán lo que debes hacer.
+                </div>
+                <div class="column four btn_franjaDistribuidor">
+                    <div class="columns four btnDistribuidor btn1">
+                        <a href="<?php echo of_get_option('w2f_como_vinculo') ?>">Distribuidores</a>
                     </div>
-                    <div class="" style="background-color: #F6B77F">
-                        <div class="contenedor footer" >
-                            <div class="columns six item-footer">
-                                <span class="title">Productos</span>
-                                <ul class="productos">
-                                    <li><a href="index_productos.html">UO Smart Beam Laser</a></li>
-                                    <li><a href="index_productos.html">UO Speaker</a></li>
-                                    <li><a href="index_productos.html">UO linkage</a></li>
-                                    <li><a href="index_productos.html">UO Nuriatti</a></li>
-                                    <li><a href="index_productos.html">UO ALBERT</a></li>
-                                    <li><a href="index_productos.html">UO Band</a></li>
-                                    <li><a href="index_productos.html">UO Air cube</a></li>
-                                    <li><a href="index_productos.html">UO Petfit</a></li>
-                                    <li><a href="index_productos.html">UO Smart Beam</a></li>
-                                    <li><a href="index_productos.html">UO SolarSkin</a></li>
-                                </ul>
-                            </div>
-                            <div class="columns three item-footer">
-                                <span class="title">Nextrading</span>
-                                <ul>
-                                    <li><a href="#sec2">Sobre Nextrading.</a></li>
-                                    <li><a href="#sec">SK Telecom.</a></li>
-                                </ul>
-                            </div>
-                            <div class="columns four item-footer">
-                                <span class="title">¿Dónde comprar?</span>
-                                <ul>
-                                    <li><a href="#sec4">Sé un distribuidor.</a></li>
-                                    <li><a href="#sec5">Material de apoyo.</a></li>
-                                </ul>
-                            </div>
-                            <div class="columns three  item-footer">
-                                <span class="title"><a href="#sec4">Contacto</a></span>
-                                <ul>
-                                </ul>
-                            </div>
-                            <div class="clear"></div>
-                            <div class="separator"></div>
-                            <div class="columns sixteen footUltimo">
-                                C.I. Nextrading Ltda. - Calle 103 # 14a - 53 Of. 503 - Rincón del Chicó - Bogotá Colombia
-                                Teléfono (57 1) 742 72222 - help@nextrading.bi
-                            </div>
-                        </div>
-                        <!-- Simple slider -->
-
+                    <div class="clear"></div>
+                    <div class="columns four btnDistribuidor btn2">
+                        <a href="#"> Quiero ser distribuidor</a>
                     </div>
                 </div>
-                <!-- Fin Tercera seccion -->
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- Simple slider -->
+        <div class="contenedor formularios">
+            <a name="contacto"></a>
+            <div class="columns eight">
+                <h3>Contáctenos</h3>
+                <?php formcraft(2); ?>
+            </div>
+            <div  class="columns eight">
+                <div class="nxtSk">
+                    <div class="column three">
+                        <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/contacto/logo_nxtsk.png" alt=""/>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="columns eight txt_nktSk">
+                        <?php echo of_get_option('w2f_contacto_datos'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div>
+    <!-- Fin Tercera seccion -->
+
+    <!-- Fin Tercera seccion -->
+<?php endif; ?>
+
+
+
+<script>
+    $(window).scroll(function () {
+        //caso btn nextrading
+        if ($(this).scrollTop() > 600 && $(this).scrollTop() < 1300) {
+            $('.mainMenu li#btn_nextrading').addClass('active');
+        } else {
+            $('.mainMenu li#btn_nextrading').removeClass('active');
+        }
+
+        //caso btn donde comprar        
+        if ($(this).scrollTop() > 1900 && $(this).scrollTop() < 2200) {
+            $('.mainMenu li#btn_donde').addClass('active');
+        } else {
+            $('.mainMenu li#btn_donde').removeClass('active');
+        }
+        //caso btn contacto        
+        if ($(this).scrollTop() > 2210 && $(this).scrollTop() < 2800) {
+            $('.mainMenu li#btn_contacto').addClass('active');
+        } else {
+            $('.mainMenu li#btn_contacto').removeClass('active');
+        }
+
+    });
+</script>
 <?php
 get_footer();

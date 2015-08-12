@@ -69,113 +69,151 @@ function optionsframework_options() {
         "id" => "w2f_header_logo",
         "std" => "",
         "type" => "upload");
-    
+
     /*
-    $options[] = array("name" => "Imagen Header",
-        "desc" => "Subir la imagen del header",
-        "id" => "w2f_header_imagen",
-        "std" => "",
-        "type" => "upload");
-*/
+      $options[] = array("name" => "Imagen Header",
+      "desc" => "Subir la imagen del header",
+      "id" => "w2f_header_imagen",
+      "std" => "",
+      "type" => "upload");
+     */
 
     /*     * * inicio ** */
 
     $options[] = array("name" => "Inicio",
         "type" => "heading");
-/*
-    $options[] = array("name" => "Banner",
+
+    $options[] = array("name" => "Banner Principal",
         "desc" => "",
         "id" => "w2f_banner_principal",
         "std" => "",
-        "type" => "editor");
+        "type" => "select",
+        "options" => $options_categories);
 
-    $options[] = array("name" => "Secciones de home",
-        "desc" => "A continuación ingrese los textos de los vínculos y sus respectivas imagen",
-        "type" => "info");
-
-    $options[] = array("name" => "Sección Nosotros",
+    $options[] = array("name" => "Slider productos",
         "desc" => "",
-        "id" => "w2f_home_nosotros_text",
+        "id" => "w2f_productos_slider",
         "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+
+    $options[] = array("name" => "articulos Empresas",
+        "desc" => "",
+        "id" => "w2f_empresas_articulos",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+
+    $options[] = array("name" => "articulos de prensa",
+        "desc" => "",
+        "id" => "w2f_prensa_articulos",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+
+    /*     * * Contacto  * * */
+
+    $options[] = array("name" => "¿Cómo comprar?",
+        "type" => "heading");
+
+    $options[] = array("name" => "Vínculo Distribuidores",
+        "desc" => "Ingrese el vínculo de distribuidores",
+        "id" => "w2f_como_vinculo",
+        "std" => "#",
         "type" => "text");
 
-    $options[] = array("name" => "Imagen Sección Nosotros",
-        "desc" => "Subir la imagen",
-        "id" => "w2f_home_nosotros_img",
-        "std" => "",
-        "type" => "upload");
 
-    $options[] = array("name" => "Sección Fortalezas",
-        "desc" => "",
-        "id" => "w2f_home_fortalezas_text",
-        "std" => "",
-        "type" => "text");
-
-    $options[] = array("name" => "Imagen Sección Fortalezas",
-        "desc" => "Subir la imagen",
-        "id" => "w2f_home_fortalezas_img",
-        "std" => "",
-        "type" => "upload");
-
-
-    $options[] = array("name" => "Sección Contacto",
-        "desc" => "",
-        "id" => "w2f_home_contacto_text",
-        "std" => "",
-        "type" => "text");
-
-    $options[] = array("name" => "Imagen Sección Contacto",
-        "desc" => "Subir la imagen",
-        "id" => "w2f_home_contacto_img",
-        "std" => "",
-        "type" => "upload");
-
-    $options[] = array("name" => "Banner inferior",
-        "desc" => "",
-        "id" => "w2f_banner_inferior",
-        "std" => "",
-        "type" => "editor");
-
-    $options[] = array("name" => "Secciones Saman",
-        "desc" => "A continuación ingrese la imagen de fondo de la seccion saman",
-        "type" => "info");
-
-    $options[] = array("name" => "Imagen Sección Saman",
-        "desc" => "Subir la imagen",
-        "id" => "w2f_home_saman_img",
-        "std" => "",
-        "type" => "upload");
-
-*/
-   
-    
     /*     * * Contacto  * * */
 
     $options[] = array("name" => "Contacto",
         "type" => "heading");
+
+
+
+    $options[] = array("name" => "Datos de contacto",
+        "desc" => "",
+        "id" => "w2f_contacto_datos",
+        "std" => "",
+        "type" => "editor");
+
+
+    $options[] = array("name" => "Productos",
+        "type" => "heading");
+    
+    $options[] = array("name" => "Slider 1",
+        "desc" => "",
+        "id" => "w2f_productos_slider1",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+    
+    $options[] = array("name" => "Slider 2",
+        "desc" => "",
+        "id" => "w2f_productos_slider2",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+    
+    $options[] = array("name" => "Slider 3",
+        "desc" => "",
+        "id" => "w2f_productos_slider3",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+    
+    $options[] = array("name" => "Slider 4",
+        "desc" => "",
+        "id" => "w2f_productos_slider4",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+    
+    $options[] = array("name" => "Slider 5",
+        "desc" => "",
+        "id" => "w2f_productos_slider5",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+    
+    $options[] = array("name" => "Slider 6",
+        "desc" => "",
+        "id" => "w2f_productos_slider6",
+        "std" => "",
+        "type" => "select",
+        "options" => $options_categories);
+
+
+
+    $options[] = array("name" => "Footer",
+        "type" => "heading");
+
+    $options[] = array("name" => "Nombre",
+        "desc" => "ingrese nombre de la compañía",
+        "id" => "w2f_footer_nombre",
+        "std" => "",
+        "type" => "text");
+
+    $options[] = array("name" => "Dirección",
+        "desc" => "Ingrese la Dirección",
+        "id" => "w2f_footer_direccion",
+        "std" => "",
+        "type" => "text");
+
+    $options[] = array("name" => "Teléfono",
+        "desc" => "Ingrese el valor del teléfono",
+        "id" => "w2f_footer_telefono",
+        "std" => "",
+        "type" => "text");
+
+    $options[] = array("name" => "Dominio",
+        "desc" => "Ingrese el valor del dominio",
+        "id" => "w2f_footer_dominio",
+        "std" => "",
+        "type" => "text");
+
     /*
-      $options[] = array("name" => "Mapa",
-      "desc" => "Ingrese el shrortcode del mapa",
-      "id" => "w2f_contacto_mapa",
-      "std" => "",
-      "type" => "text");
 
 
-      $options[] = array("name" => "imagen de fondo",
-      "desc" => "Subir la imagen de fondo para esta sección",
-      "id" => "w2f_contacto_imagen",
-      "std" => "",
-      "type" => "upload");
-      /*
-     * 
-     * 
-     */
-
-
-      $options[] = array("name" => "Footer",
-      "type" => "heading");
-      
-      /*
 
       $options[] = array("name" => "Nuestros Aliados",
       "desc" => "",
@@ -183,11 +221,6 @@ function optionsframework_options() {
       "std" => "",
       "type" => "editor");
 
-      $options[] = array("name" => "Formas de pago",
-      "desc" => "",
-      "id" => "w2f_footer_pagos",
-      "std" => "",
-      "type" => "editor");
 
       $options[] = array("name" => "Mensaje condiciones de uso",
       "desc" => "ingrese el texto de las condiciones de uso",

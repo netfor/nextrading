@@ -22,7 +22,10 @@ if (function_exists('register_sidebar'))
 
 register_nav_menus(array(
     'primary' => __('Principal', ''),
-    'footer' => __('Footer', '')
+    'productos_footer' => __('Productos Footer', ''),
+    'nextrading_footer' => __('nextrading Footer', ''),
+    'donde_footer' => __('Donde Footer', ''),
+    'contacto_footer' => __('Contacto Footer', ''),
 ));
 
 function fallbackmenu() {
@@ -38,8 +41,8 @@ function fallbackmenu() {
 if (function_exists('add_theme_support')) { // Added in 2.9
     add_theme_support('post-thumbnails');
     add_image_size('index_banner', 1100, 600, true);
-    add_image_size('index_leido', 212, 159, true);
-    add_image_size('img_tips', 150, 150, true);
+    add_image_size('index_slider', 170, 170, true);
+    add_image_size('index_prensa', 280, 150, true);
 }
 
 /* CUSTOM EXCERPTS */

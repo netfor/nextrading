@@ -28,55 +28,74 @@
     </head>
     <body>
 
-            <a href="#main_menu_responsive" class="opmenu_responsive">
-                <div class="overlay"></div>
-                <i class="fa fa-bars btn_opmenu"></i>
-                <?php if (of_get_option('w2f_header_logo') != ''): ?>
-                    <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-                <?php else: ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-                <?php endif; ?>
-            </a>
-            <header>
-                <div class="overlay"></div>
-                <div class="contenedor">
+        <a href="#main_menu_responsive" class="opmenu_responsive">
+            <div class="overlay"></div>
+            <i class="fa fa-bars btn_opmenu"></i>
+            <?php if (of_get_option('w2f_header_logo') != ''): ?>
+                <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+            <?php else: ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+            <?php endif; ?>
+        </a>
+        <header>
+            <div class="overlay"></div>
+            <div class="contenedor">
 
 
-                    <nav>
-                        <ul class="mainMenu">
-                            <?php if (is_home()): ?>
-                                <li ><a href="<?php bloginfo('url') ?>/productos">Productos</a></li>
-                                <li id="btn_nextrading"><a href="#nextrading">Nextrading</a></li>
-                                <li class="logo_header">
-                                    <a href="#inicio">
-                                        <?php if (of_get_option('w2f_header_logo') != ''): ?>
-                                            <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-                                        <?php else: ?>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-                                        <?php endif; ?>
-                                    </a>
-                                </li>
-                                <li id="btn_donde"><a href="#donde-comprar">¿Dónde comprar?</a></li>
-                                <li id="btn_contacto" ><a href="#contacto">Contacto</a></li>
-                            <?php else: ?>
-                                <li class="active"><a href="#">Productos</a></li>
-                                <li><a href="<?php echo bloginfo('url') ?>#nextrading">Nextrading</a></li>
-                                <li class="logo_header">
-                                    <a href="<?php echo bloginfo('url') ?>#inicio">
-                                        <?php if (of_get_option('w2f_header_logo') != ''): ?>
-                                            <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-                                        <?php else: ?>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-                                        <?php endif; ?>
-                                    </a>
-                                </li>
-                                <li><a href="<?php echo bloginfo('url') ?>#donde-comprar">¿Dónde comprar?</a></li>
-                                <li><a href="<?php echo bloginfo('url') ?>#contacto">Contacto</a></li>
+                <nav>
+                    <ul class="mainMenu">
+                        <?php if (is_home()): ?>
+                            <li id="productos" ><a>Productos</a></li>
+                            <li id="btn_nextrading"><a href="#nextrading">Nextrading</a></li>
+                            <li class="logo_header">
+                                <a href="#inicio">
+                                    <?php if (of_get_option('w2f_header_logo') != ''): ?>
+                                        <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+                                    <?php else: ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                            <li id="btn_donde"><a href="#donde-comprar">¿Dónde comprar?</a></li>
+                            <li id="btn_contacto" ><a href="#contacto">Contacto</a></li>
+                        <?php else: ?>
+                            <li id="productos" class="active"><a>Productos</a></li>
+                            <li><a href="<?php echo bloginfo('url') ?>#nextrading">Nextrading</a></li>
+                            <li class="logo_header">
+                                <a href="<?php echo bloginfo('url') ?>#inicio">
+                                    <?php if (of_get_option('w2f_header_logo') != ''): ?>
+                                        <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+                                    <?php else: ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                            <li><a href="<?php echo bloginfo('url') ?>#donde-comprar">¿Dónde comprar?</a></li>
+                            <li><a href="<?php echo bloginfo('url') ?>#contacto">Contacto</a></li>
 
-                            <?php endif; ?>
-                        </ul>
-                    </nav>
+                        <?php endif; ?>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu_productos">
+                <div class="contenedor">    
+                    <ul>
+                        <li><a href="#">Producto 1</a></li>
+                        <li><a href="#">Producto 2</a></li>
+                        <li><a href="#">Producto 1</a></li>
+                        <li><a href="#">Producto 2</a></li>
+                        <li><a href="#">Producto 1</a></li>
+                        <li><a href="#">Producto 2</a></li>
+                        <li><a href="#">Producto 1</a></li>
+                        <li><a href="#">Producto 2</a></li>
+                        <li><a href="#">Producto 1</a></li>
+                        <li><a href="#">Producto 2</a></li>
+                        <li><a href="#">Producto 1</a></li>
+                        <li><a href="#">Producto 2</a></li>
+                    </ul>
                 </div>
-            </header>
+            </div>
+
+        </header>
 
 

@@ -248,31 +248,5 @@
     <!-- Fin Tercera seccion -->
 <?php endif; ?>
 
-
-
-<script>
-    $(window).scroll(function () {
-        //caso btn nextrading
-        if ($(this).scrollTop() > 600 && $(this).scrollTop() < 1300) {
-            $('.mainMenu li#btn_nextrading').addClass('active');
-        } else {
-            $('.mainMenu li#btn_nextrading').removeClass('active');
-        }
-
-        //caso btn donde comprar        
-        if ($(this).scrollTop() > 1900 && $(this).scrollTop() < 2200) {
-            $('.mainMenu li#btn_donde').addClass('active');
-        } else {
-            $('.mainMenu li#btn_donde').removeClass('active');
-        }
-        //caso btn contacto        
-        if ($(this).scrollTop() > 2210 && $(this).scrollTop() < 2800) {
-            $('.mainMenu li#btn_contacto').addClass('active');
-        } else {
-            $('.mainMenu li#btn_contacto').removeClass('active');
-        }
-
-    });
-</script>
 <?php
 get_footer();

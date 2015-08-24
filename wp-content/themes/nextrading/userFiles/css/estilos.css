@@ -46,7 +46,8 @@ body{
 header nav ul{list-style: none;}
 header nav ul li{display: block; float: left;  min-width: 170px;}
 header nav ul li a{text-decoration: none; color: #fff}
-header nav ul li.logo_header{width: 250px;}
+header nav ul li.logo_header{width: 250px; z-index: 100; position: relative;}
+header nav ul li#productos{cursor: pointer}
 header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0;}
 #main_menu_responsive{ 
     background-color: #BFDA6F;
@@ -58,7 +59,9 @@ header nav ul li.logo_header img{width: 100%; display: block;margin: -30px 0 0 0
 
 
 /** Estilos del home **/
-//#inicio{background-image: url(../img/home/bg_home.jpg);}
+#inicio{
+    margin-top: 60px;
+}
 
 .botton_smart{
     background-color: #F28021;
@@ -325,53 +328,7 @@ ul.sliderOnPrensa li{
 .secFinal .btn_franjaDistribuidor .btnDistribuidor.btn2{
     background-color: #F48022;
 }
-.formularios.contenedor{
-    padding: 30px 0;
-}
-.formularios h3{
-    font-size: 36px;
-    font-weight: 300;
-    color: #AECA36;
-}
-.formularios input,
-.formularios select,
-.formularios textarea
-{
-    margin: 5px 0;
-    padding: 5px 0;
-    border: 1px solid #B7B7B7;
-    border-radius: 5px;
-    -o-border-radius: 5px;
-    -moz-border-radius: 5px;
-    font-size: 15px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: transparent;
-    color: #7D7D7D;
-    font-weight: lighter;
-    text-indent: 13px;
-}
-.formularios select{
-    background-image: url(../img/contacto/img_select.png);
-    background-repeat: no-repeat;
-    background-position: 98% center;
-    background-size: 17px auto;
-    padding-right: 37px;
-    font-weight: 300;
-}
-.formularios textarea{
-    resize: none;
-    min-height: 100px;
-    max-height: 150px;
-}
-.formularios input[type="submit"]{
-    background-color: #A6CE39;
-    color: #fff;
-    border-radius: 7px;
-    padding: 7px 0;
-    -o-border-radius: 7px;
-    -moz-border-radius: 7px;
-}
+
 .formularios .adverT{
     font-size: 12px;
     font-weight: 300;
@@ -657,4 +614,41 @@ ul.sliderOnPrensa li{
 }
 .seccion_interna_producto ul li img{
     display: none;
+}
+
+
+/* menu productos */
+.menu_productos{
+    width: 100%;
+    padding: 20px 0px 10px 0px;
+    background: #FFF;
+    height: 200px;
+    z-index: 10;
+    position: absolute;
+    top: 59px;
+    display: none;
+}
+.menu_productos ul{
+    width: 100%;
+    background: #F00;
+}
+.menu_productos ul li{
+    float: left;
+    margin: 2px 10px;
+    
+}
+.menu_productos ul li a{
+    width: 150px;
+    float: left;
+    display: block;
+    color: #F09748;
+    text-decoration: none;
+    text-align: left;
+    padding: 5px;
+    text-transform: capitalize;
+    
+}
+.menu_productos ul li a:hover{
+    color: #FFF;
+    background: #F09748
 }

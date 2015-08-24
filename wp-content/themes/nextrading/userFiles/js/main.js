@@ -1,34 +1,23 @@
-/* 
- * Author:    Programador2
+/**
+ * @name Eventos que se ejecutan luego de cargar todo el contenido
  */
-
 $(document).ready(function () {
-//Fullpager
-    /*
-    $('#fullpage').fullpage({
-       
-        animateAnchor: true,
-        scrollOverflow: true,
-        css3: false,
-        slidesNavigation: true,
-        afterRender: function () {
-            animarHome();
-        },
-        onSlideLeave: function () {
-            animarHome();
-        },
-        fitToSection: false
-    });
-    */
-    
-    
-    //Aqui va el menu
+
+    /**
+     * @name Evento menu responsive
+     * @description Este evento permite cargar el menu responsive
+     */
     $("#main_menu_responsive").mmenu({
         "navbar": {
             title: "Nextrading"
         }
     });
-    //Slider 
+
+
+    /**
+     * @name listado de eventos para sliders
+     * @description Estos eventos activan los sliders de productos
+     */
     $(".sliderOn1").bxSlider();
     $(".sliderOn2").bxSlider();
     $(".sliderOn3").bxSlider();
@@ -36,10 +25,17 @@ $(document).ready(function () {
     $(".sliderOn5").bxSlider();
     $(".sliderOn6").bxSlider();
 
+    /**
+     * @name Evento slider home
+     * @description Este evento permite activar el home de home
+     */
     $(".sliderOnPrensa").bxSlider({
         //pager: false
     });
-    //Carrousel
+    /**
+     * @name Evento slider prensa
+     * @description Este evento permite activar el carrusel de noticias del home
+     */
     $('.carrouselOnPrensa').bxSlider({
         minSlides: 3,
         maxSlides: 10,
@@ -47,7 +43,6 @@ $(document).ready(function () {
         slideMargin: 10,
         pager: false
     });
-    //Carrousel
     $('.carrouselVerInPrensa').bxSlider({
         mode: 'vertical',
         minSlides: 3,
@@ -58,40 +53,10 @@ $(document).ready(function () {
         infiniteLoop: false
     });
 
-
-
-
-
-//funcion para detectar las almohadillas de la url
-    function dataSeccion() {
-        //Remover los datos de clase
-        $(".mainMenu li").removeClass('active');
-        //obtener data 
-        var tab = window.location.hash.substring(1);
-        console.log(typeof tab);
-        if (tab != "") {
-            $(".mainMenu li a[href='#" + tab + "']").parent('li').addClass('active');
-        } else {
-            $(".mainMenu li a[href='#sec1']").parent('li').addClass('active');
-        }
-
-    }
-
-
-
-    /** Animaciones usando Tween max **/
-    function animarHome() {
-        (new TimelineLite())
-                /************** Inicio de las animaciones  ***************/
-                .append([
-                    TweenMax.fromTo($('.botton_smart'), 1, {css: {marginLeft: "0%", opacity: 0}}, {css: {marginLeft: "15%", opacity: 1}}),
-                ])
-                .append([
-                    TweenMax.fromTo($('.txt_home'), 1, {css: {marginLeft: "0%", opacity: 0}}, {css: {marginLeft: "5%", opacity: 1}}),
-                ]);
-    }
-
-
+    /**
+     * @name Evento cargar articulos
+     * @description Este evento permite cargar la información de una noticia en la sección del home
+     */
     $('.carrouselVerInPrensa p.ver_mas').click(function () {
         //obtengo el id
         var valorId = $(this).attr('id');
@@ -112,25 +77,25 @@ $(document).ready(function () {
             //datos que le voy a enviar
             data: dataArticulo,
             success: function (data) {
-
                 if (data != '') {
                     setTimeout(function () {
                         //oculto el div de cargando
                         $('#cambiando').fadeOut(500);
-                        setTimeout(function(){
+                        setTimeout(function () {
                             $('#prensaNoticia .contentNoticia').html(data);
                         }, 500)
                     }, 500);
                 }
-
             }
-
         });
     });
-    
-    
-    
-    //scroling animado
+
+
+
+    /**
+     * @name Evento para animar desplazamiento
+     * @description Esta función permite animar el desplazamiento de la pagina por anclas o id
+     */
     $('a[href*=#]').click(function () {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
                 && location.hostname === this.hostname) {
@@ -138,15 +103,48 @@ $(document).ready(function () {
             $target = $target.length && $target
                     || $('[name=' + this.hash.slice(1) + ']');
             if ($target.length) {
-                var targetOffset = $target.offset().top - 120;
+                var targetOffset = $target.offset().top - 60;
                 $('html,body')
                         .animate({scrollTop: targetOffset}, 1000);
                 return false;
             }
         }
     });
-    
+
+    /**
+     * @name Evento para activar el menú interno
+     * @description Este evento permite activar el menú interno.
+     */
+    $('#productos').click(function () {
+        $('.menu_productos').slideToggle(500);
+    });
+
 });
 
+/**
+ * @name Eventos de scrroll
+ * @description Los siguientes eventos se ejecutan al desplazar el scroll del sitio web
+ */
+$(window).scroll(function () {
 
+    //caso btn nextrading
+    if ($(this).scrollTop() > 690 && $(this).scrollTop() < 1400) {
+        $('.mainMenu li#btn_nextrading').addClass('active');
+    } else {
+        $('.mainMenu li#btn_nextrading').removeClass('active');
+    }
 
+    //caso btn donde comprar        
+    if ($(this).scrollTop() > 1940 && $(this).scrollTop() < 2240) {
+        $('.mainMenu li#btn_donde').addClass('active');
+    } else {
+        $('.mainMenu li#btn_donde').removeClass('active');
+    }
+    //caso btn contacto        
+    if ($(this).scrollTop() > 2250 && $(this).scrollTop() < 2850) {
+        $('.mainMenu li#btn_contacto').addClass('active');
+    } else {
+        $('.mainMenu li#btn_contacto').removeClass('active');
+    }
+
+});

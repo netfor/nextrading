@@ -26,6 +26,7 @@ register_nav_menus(array(
     'nextrading_footer' => __('nextrading Footer', ''),
     'donde_footer' => __('Donde Footer', ''),
     'contacto_footer' => __('Contacto Footer', ''),
+    'productos' => __('Productos', ''),
 ));
 
 function fallbackmenu() {

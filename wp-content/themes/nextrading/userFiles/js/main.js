@@ -3,27 +3,6 @@
  */
 $(document).ready(function () {
 
-    /**
-     * @name Evento menu responsive
-     * @description Este evento permite cargar el menu responsive
-     */
-    $("#main_menu_responsive").mmenu({
-        "navbar": {
-            title: "Nextrading"
-        }
-    });
-
-
-    /**
-     * @name listado de eventos para sliders
-     * @description Estos eventos activan los sliders de productos
-     */
-    $(".sliderOn1").bxSlider();
-    $(".sliderOn2").bxSlider();
-    $(".sliderOn3").bxSlider();
-    $(".sliderOn4").bxSlider();
-    $(".sliderOn5").bxSlider();
-    $(".sliderOn6").bxSlider();
 
     /**
      * @name Evento slider home
@@ -38,10 +17,13 @@ $(document).ready(function () {
      */
     $('.carrouselOnPrensa').bxSlider({
         minSlides: 3,
-        maxSlides: 10,
+        maxSlides: 5,
         slideWidth: 170,
         slideMargin: 10,
-        pager: false
+        pager: false,
+        moveSlides: 1,
+        auto: true,
+        autoStart: true,
     });
     $('.carrouselVerInPrensa').bxSlider({
         mode: 'vertical',
@@ -52,7 +34,10 @@ $(document).ready(function () {
         moveSlides: 1,
         infiniteLoop: false
     });
-
+    
+    $('.mainMenu').slicknav();
+    
+    
     /**
      * @name Evento cargar articulos
      * @description Este evento permite cargar la información de una noticia en la sección del home
@@ -119,6 +104,64 @@ $(document).ready(function () {
         $('.menu_productos').slideToggle(500);
     });
 
+    /**
+     * @name Listar Slider Producto
+     * @description     Esta función permite iterar las listas no ordenadas en el contenido,
+     *                  si encuentra, las itera y le asigna una clase para que se active el 
+     *                  slider ejemplo sliderOn1, luego itera los elementos li y si tiene imagen
+     *                  la ubica como fondo del li, si es un iframe (video) lo deja en el contenido
+     *                  si no encuentra ninguna de las anteriores opciones elimina el elemento li.
+     * @returns {none}
+     */
+    function listarSliderProducto() {
+        $('.contenidos_productos ul').each(function (i, data) {
+            //creo la variable de la clase
+            var valorClase = 'sliderOn' + (i + 1).toString();
+            //asigno la clase a este elemento
+            $(this).addClass(valorClase);
+            //itero todos los li del data
+            $($(this).children('li')).each(function (o, dataUl) {
+                //creo la variable del img
+                var imgLi;
+                //obtengo la imagen del li
+                imgLi = $(this).children('img').attr('src');
+                //valido el valor de imgli
+                if (imgLi != null) {
+                    $(this).css('background-image', 'url("' + imgLi + '")');
+                }
+                //si es nulo
+                if(imgLi == null){
+                    //creo la variable de iframe
+                    var iframeLi = $(this).children('iframe');
+                    //valido si hay un iframe
+                    if(iframeLi[0] == null){
+                        //si no hay se eliminar el li
+                        $(this).remove();
+                    }
+                }
+            })
+
+        });
+    }
+    listarSliderProducto();
+    
+    
+    /**
+     * @name Slider Productos
+     * @description Esta función permite activar los sliders de la sección de productos
+     * @returns {undefined}
+     */
+    function sliderProductos() {
+        $(".sliderOn1").bxSlider();
+        $(".sliderOn2").bxSlider();
+        $(".sliderOn3").bxSlider();
+        $(".sliderOn4").bxSlider();
+        $(".sliderOn5").bxSlider();
+        $(".sliderOn6").bxSlider();
+        $(".sliderOn7").bxSlider();
+        $(".sliderOn8").bxSlider();
+    }
+    sliderProductos();
 });
 
 /**

@@ -12,31 +12,25 @@
         <link href="<?php echo get_template_directory_uri(); ?>/userFiles/css/estilos.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo get_template_directory_uri(); ?>/userFiles/css/responsive-style.css" rel="stylesheet" type="text/css"/>        
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300' rel='stylesheet' type='text/css'>
-        <link href="<?php echo get_template_directory_uri(); ?>/userFiles/css/jquery.mmenu/jquery.mmenu.all.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="<?php echo get_template_directory_uri(); ?>/userFiles/css/jquery.bxslider.css" rel="stylesheet" type="text/css"/>
-
+        <link href="<?php echo get_template_directory_uri(); ?>/userFiles/css/menu/slicknav.css" rel="stylesheet" type="text/css"/>
         <!-- Scripts del sitio -->
         <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/jquery-1.11.1.js" type="text/javascript"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/jquery.slimscroll.js" type="text/javascript"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/jquery.fullPage.js" type="text/javascript"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/main.js" type="text/javascript"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/jquery.mmenu/jquery.mmenu.min.all.js" type="text/javascript"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/jquery.bxslider.js" type="text/javascript"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/greensock/TweenMax.min.js" type="text/javascript"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/userFiles/js/menu/jquery.slicknav.js" type="text/javascript"></script>
         <?php wp_head(); ?>   
     </head>
     <body>
 
-        <a href="#main_menu_responsive" class="opmenu_responsive">
-            <div class="overlay"></div>
-            <i class="fa fa-bars btn_opmenu"></i>
-            <?php if (of_get_option('w2f_header_logo') != ''): ?>
-                <img src="<?php echo of_get_option('w2f_header_logo') ?>" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-            <?php else: ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
-            <?php endif; ?>
-        </a>
+        <?php if (of_get_option('w2f_header_logo') != ''): ?>
+            <img src="<?php echo of_get_option('w2f_header_logo') ?>" class="logo-responsive" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+        <?php else: ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/userFiles/img/header/logo.png" class="logo-responsive" alt="<?php echo bloginfo('name') ?>" title="<?php echo bloginfo('name') ?>"/>
+        <?php endif; ?>
         <header>
             <div class="overlay"></div>
             <div class="contenedor">
@@ -79,23 +73,11 @@
             </div>
             <div class="menu_productos">
                 <div class="contenedor">    
-                    <ul>
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                        <li><a href="#">Producto 1</a></li>
-                        <li><a href="#">Producto 2</a></li>
-                    </ul>
+                    <?php wp_nav_menu(array('container_id' => 'subnav', 'theme_location' => 'productos', 'menu_id' => 'productos', 'menu_class' => '', 'fallback_cb' => 'fallbackmenu')); ?>
+
                 </div>
             </div>
-
         </header>
+
 
 

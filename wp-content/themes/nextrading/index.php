@@ -1,68 +1,93 @@
 <?php get_header(); ?>
 <!-- Primera seccion -->
 <div id="inicio" class="section">
+    <div class="contenedor">
 
-
-    <?php if (of_get_option('w2f_banner_principal') != ''): ?>
-        <ul class="sliderOnPrensa">
-            <?php
-            //defino arrglo de la consulta
-            $dataConsultaBanner = array(
-                'cat' => of_get_option('w2f_banner_principal'),
-                'posts_per_page' => 6,
-                'orderby' => 'rand'
-            );
-            $queryBanner = new WP_Query($dataConsultaBanner);
-            ?>
-            <?php
-            if ($queryBanner->have_posts()) :
-                while ($queryBanner->have_posts()) : $queryBanner->the_post();
-                    ?>
-                    <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner'); ?>
-                    <li style="background-image: url('<?php echo $image_attr[0] ?>')" class="bg_principal">
-                        <img src="<?php echo $image_attr[0] ?>" alt=""/>
-                    </li> 
-                    <?php
-                endwhile;
-            endif;
-            ?>
-        </ul>      
-    <?php endif; ?>
-
-
-    <?php if (of_get_option('w2f_productos_slider') != ''): ?>
-        <div id="carrouselInPrensa">
-            <ul class="carrouselOnPrensa">
-
+        <?php if (of_get_option('w2f_banner_principal') != ''): ?>
+            <ul class="sliderOnPrensa">
                 <?php
                 //defino arrglo de la consulta
-                $dataConsultaSlider = array(
-                    'cat' => of_get_option('w2f_productos_slider'),
-                    'posts_per_page' => 20,
+                $dataConsultaBanner = array(
+                    'cat' => of_get_option('w2f_banner_principal'),
+                    'posts_per_page' => 6,
                     'orderby' => 'rand'
                 );
-                $querySlider = new WP_Query($dataConsultaSlider);
+                $queryBanner = new WP_Query($dataConsultaBanner);
                 ?>
                 <?php
-                if ($querySlider->have_posts()) :
-                    while ($querySlider->have_posts()) : $querySlider->the_post();
+                if ($queryBanner->have_posts()) :
+                    while ($queryBanner->have_posts()) : $queryBanner->the_post();
+                        //defino la variable de imagen
+                        $valorImagenBanner = '';
+                        //defino la variable para el texto
+                        $valorTexto = '';
+                        //verifico si hay tema de multiples imagenes destacadas
+                        if (class_exists('Dynamic_Featured_Image')):
+                            //obtengo el valor global
+                            global $dynamic_featured_image;
+                            //obtengo el valor de la imagen por el id
+                            $featured_images = $dynamic_featured_image->get_featured_images($post->ID);
+                            //valido los valores
+                            if ($featured_images[0] != NULL and $featured_images[0]['full'] != ''):
+                                //creo el objeto de imagen
+                                $valorImagenBanner = '<img src="' . $featured_images[0]['full'] . '" alt="' . get_the_title() . '" title="' . get_the_title() . '"/>';
+                                //cambio el valor de la clase de texto
+                                $valorTexto = 'full';
+                            endif;
+                        endif;
+                        //obtengo la primera imagen destacada.
+                        $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_banner');
                         ?>
-                        <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_slider'); ?>
+                        <li style="background-image: url('<?php echo $image_attr[0] ?>')" class="bg_principal">
+                            <div class="contenedor">
+                                <h2><?php the_title() ?></h2>
+                                <div class="text <?php echo $valorTexto ?>"><?php the_excerpt() ?></div>
+                                <?php echo $valorImagenBanner ?>
+                            </div>
 
-                        <li class="opacar">
-                            <a href="<?php the_permalink() ?>">
-                                <div class="overlay fade"></div>
-                                <div class="txtCarrousel fadetext"><?php the_title() ?></div>
-                                <img src="<?php echo $image_attr[0] ?>" alt="<?php the_title() ?>" title="<?php the_title() ?>"/>
-                            </a>
-                        </li>
+                        </li> 
                         <?php
                     endwhile;
                 endif;
                 ?>
-            </ul>
-        </div>
-    <?php endif; ?>
+            </ul>      
+        <?php endif; ?>
+
+
+        <?php if (of_get_option('w2f_productos_slider') != ''): ?>
+            <div id="carrouselInPrensa">
+                <ul class="carrouselOnPrensa">
+
+                    <?php
+                    //defino arrglo de la consulta
+                    $dataConsultaSlider = array(
+                        'cat' => of_get_option('w2f_productos_slider'),
+                        'posts_per_page' => 20,
+                        'orderby' => 'rand'
+                    );
+                    $querySlider = new WP_Query($dataConsultaSlider);
+                    ?>
+                    <?php
+                    if ($querySlider->have_posts()) :
+                        while ($querySlider->have_posts()) : $querySlider->the_post();
+                            ?>
+                            <?php $image_attr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'index_slider'); ?>
+
+                            <li class="opacar">
+                                <a href="<?php the_permalink() ?>">
+                                    <div class="overlay fade"></div>
+                                    <div class="txtCarrousel fadetext"><?php the_title() ?></div>
+                                    <img src="<?php echo $image_attr[0] ?>" alt="<?php the_title() ?>" title="<?php the_title() ?>"/>
+                                </a>
+                            </li>
+                            <?php
+                        endwhile;
+                    endif;
+                    ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    </div>
 </div>
 <!-- Fin Primera seccion -->
 <?php if (of_get_option('w2f_empresas_articulos') != ''): ?>

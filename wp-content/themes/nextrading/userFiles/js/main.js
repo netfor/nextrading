@@ -34,10 +34,10 @@ $(document).ready(function () {
         moveSlides: 1,
         infiniteLoop: false
     });
-    
-    $('.mainMenu').slicknav();
-    
-    
+
+
+
+
     /**
      * @name Evento cargar articulos
      * @description Este evento permite cargar la información de una noticia en la sección del home
@@ -104,6 +104,8 @@ $(document).ready(function () {
         $('.menu_productos').slideToggle(500);
     });
 
+
+
     /**
      * @name Listar Slider Producto
      * @description     Esta función permite iterar las listas no ordenadas en el contenido,
@@ -130,11 +132,11 @@ $(document).ready(function () {
                     $(this).css('background-image', 'url("' + imgLi + '")');
                 }
                 //si es nulo
-                if(imgLi == null){
+                if (imgLi == null) {
                     //creo la variable de iframe
                     var iframeLi = $(this).children('iframe');
                     //valido si hay un iframe
-                    if(iframeLi[0] == null){
+                    if (iframeLi[0] == null) {
                         //si no hay se eliminar el li
                         $(this).remove();
                     }
@@ -144,8 +146,8 @@ $(document).ready(function () {
         });
     }
     listarSliderProducto();
-    
-    
+
+
     /**
      * @name Slider Productos
      * @description Esta función permite activar los sliders de la sección de productos
@@ -162,6 +164,31 @@ $(document).ready(function () {
         $(".sliderOn8").bxSlider();
     }
     sliderProductos();
+
+
+    function manipularMenuPrincipal() {
+        //obtengo la información del li de productos
+        var liProductos = 'productos';
+        //tomo el contenido del menu de productos
+        var menuProductos = $('div#subnav').html();
+        //asigno los contenidos obtenidos al menu
+        $('li#productos').html(liProductos + menuProductos);
+
+        /**
+         * @name evento para activar el menu responsive
+         * @description Este evento activa el menu responsive en el sitio web
+         */
+        $('.mainMenu').slicknav();
+
+        /**
+         * @name Evento eliminar logo responsive
+         * @description Esta función permite elimianar el logo responsive del menu
+         */
+        $('ul.slicknav_nav li.logo_header').hide();
+
+    }
+    manipularMenuPrincipal();
+
 });
 
 /**

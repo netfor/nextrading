@@ -44,6 +44,7 @@ body{
 #header, header{top:0px;left: 0;}
 #header .overlay, header .overlay{ background-color: #A6CE39;}
 header nav ul{list-style: none;}
+header nav ul ul {display: none;}
 header nav ul li{display: block; float: left;  min-width: 170px;}
 header nav ul li a{text-decoration: none; color: #fff}
 header nav ul li.logo_header{width: 250px; z-index: 100; position: relative;}
@@ -415,7 +416,6 @@ ul.sliderOnPrensa li{
 /** Estilos de carrousel vertical**/
 .prensaContent{
     position: relative;
-    z-index: 10000;
 }
 .prensaContent h2{
     font-weight: 200;
@@ -694,11 +694,12 @@ ul.sliderOnPrensa li{
 
 /* logo responsive */
 .logo-responsive{
-    height: 70px;
+    height: 55px;
     width: auto;
     z-index: 10000;
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 0px;
     display: none;
+    margin: 2px 0px 0px 0px;
 }

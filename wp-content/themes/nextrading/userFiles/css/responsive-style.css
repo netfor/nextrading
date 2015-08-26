@@ -150,7 +150,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* Note: Design for a width of 320px */
 
 @media only screen and (max-width: 767px) {
-    body{ padding: 70px 0px 0px 0px; }
+    body{ padding: 42px 0px 0px 0px; }
     /* estilos para el header */
     header      { display: none }
     header img.logo     { margin: 15px 30px 0px 20px }
@@ -159,9 +159,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
     /*inicio*/
     #inicio{ margin: 10px 0px 0px 0px;}
     /* banner */
-    ul.sliderOnPrensa li h2{ width: 100%; margin: 20px 0px 10px 0px;}
-    ul.sliderOnPrensa li div.text{ width: 98%; margin: 0px; padding: 1%;-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 1px; }
+    div#inicio{ height: 390px !important;}
+    div#inicio .bx-wrapper .bx-viewport{ height: 390px !important;}
+    ul.sliderOnPrensa li h2{ width: 100%; margin: 40px 0px 10px 0px; text-transform: capitalize; font-weight: 500;}
+    ul.sliderOnPrensa li div.text{ width: 98%; margin: 0px; padding: 1%;-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 1px; display: none; }
     ul.sliderOnPrensa li img { margin: 0px auto; padding: 0px; float: none; width: 300px; }
+    
+    
     
     /* carrusel productos */
     #carrouselInPrensa{display: none;}
@@ -169,17 +173,43 @@ Use it to make something cool, have fun, and share what you've learned with othe
     /* nextrading */
     .section_explication{ background: none;}
     .logo .lg1{ margin: 0px; padding: 0px;}
+    .logo .lg1 img{width: 100%;}
     .nxtAcerca .txt_nxtAcerca.txt1 { padding: 0px; margin: 0px;}
     .logo .lg2{ margin: 10px 0px 0px 0px;}
+    .logo .lg2 img{width: 100%;}    
+    
+    
     
     
     /*carrusel de noticias*/
-    #prensaCarrusel .bx-wrapper .bx-prev{ left: 190px}
+    #seccion_prensa{ padding: 10px 0px; }
     
+    .prensaContent h2{ margin: 0px 0px 10px 0px;}
+    #prensaCarrusel .bx-wrapper .bx-viewport{ background: none;  }
+    #prensaCarrusel .bx-wrapper .bx-prev{ left: 190px; }
+    
+    /* sección dende comprar */
+    .secFinal .title span{ width: 100%; }
+    .secFinal .txt1{ margin: 0px; text-align: center; width: 100% !important;  }
+    .secFinal .btn_franjaDistribuidor{ margin: 10px 0px 0px 10px; }
+    
+    
+    /* formularios de contacto */
+    .formularios .nxtSk{ margin: 10px 0px 0px 0px; }
+    .formularios .nxtSk img{ width: 100%; }
+    .formularios .nxtSk .txt_nktSk{ padding: 0px; margin: 10px 0px;  }
+    .formularios .nxtSk .txt_nktSk ul{ margin: 0px; padding: 0px 0px 0px 20px; }
+    
+    /* estilos para productos */
+    .seccion_interna_producto.inicio{ margin: 6px 0px 0px 0px; }
+    .seccion_interna_producto .bx-wrapper .bx-viewport{ height: 350px !important; }
+    .seccion_interna_producto .bx-wrapper .bx-viewport li{ height: 350px !important; }
+    .seccion_interna_producto ul li iframe{ width: 100%; height: 100%; }
+    /* estilos para el menu de responsive */
     .slicknav_menu{ display: block }
     .logo-responsive{display: block}
 
-
+    
     .contenedor                                  { width: 300px !important; }
     .galleria                                   { margin: 0px 0px 10px 0px }
 

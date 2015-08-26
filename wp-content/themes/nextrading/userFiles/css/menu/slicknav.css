@@ -10,6 +10,10 @@
     padding: 0.438em 0.625em 0.438em 0.625em; 
     line-height: 1.125em; 
     cursor: pointer; 
+    background: #555;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
@@ -46,16 +50,15 @@
 }
 /* Button Text */
 .slicknav_menu  .slicknav_menutxt {
-    font-size: 0px;
-
+    color: #FFF;
 }
 /* Button Lines */
 .slicknav_menu .slicknav_icon-bar {
     background-color: #fff;
 }
 .slicknav_menu {
-    background:#334047;
-    border-bottom: 3px #60af27 solid;
+    background:#666;
+    border-bottom: none;
     padding:10px 0px;
     position:fixed;
     top: 0px;
@@ -86,9 +89,8 @@
     margin:2px 5px;
     text-decoration:none;
     color:#FFF;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
-    border-bottom: 1px solid #4e6972;
 }
 .slicknav_nav li:last-child a{
     border-bottom: none;
